@@ -1,0 +1,106 @@
+Universidad Peruana de Ciencias Aplicadas
+Ciencias de la Computación
+Procesamiento de Imágenes
+Trabajo Final
+Docente
+Carlos Fernando Montoya Cubas
+
+Estudiante:
+Nicola Rovegno Chavez | u20191b823
+
+Resumen
+Este trabajo aborda un problema común en el procesamiento de imágenes que incluye la detección de objetos, la segmentación de imágenes y la clasificación de imágenes. Este problema se resolverá utilizando modelos avanzados de deep learning. Para la detección de objetos, se usará YOLOv5, para segmentar imágenes, se empleará U-Net, y para la clasificación, se utilizará ResNet. Estos modelos se implementarán en una arquitectura de tres capas utilizando contenedores Docker para garantizar que la solución sea eficiente y escalable. Esta aplicación se evaluará con datos de Kaggle y se desplegará en un sistema que divide el procesamiento en tres partes principales: la interfaz de usuario, el servidor que ejecuta los modelos y la base de datos que almacena los resultados.
+
+Caso de uso
+Problemática
+El procesamiento de imágenes en visión por computadora incluye tareas cruciales como:
+
+Detección de Objetos: Identificar y localizar objetos en una imagen. Esto es importante para sistemas de vigilancia, conducción autónoma y robótica.
+Segmentación de Imágenes: Dividir una imagen en diferentes partes o regiones significativas. Es útil en medicina, donde necesitamos separar órganos en imágenes de tomografía.
+Clasificación de Imágenes: Asignar una categoría a una imagen completa. Se usa en aplicaciones como reconocimiento facial y diagnóstico médico.
+Cada una de estas tareas tiene sus propios desafíos, como variaciones en la iluminación, la presencia de objetos que se ocultan entre sí y la necesidad de procesar grandes cantidades de datos rápidamente.
+
+Motivación
+Las razones para abordar estos problemas son:
+
+Mejorar la Seguridad: La detección precisa de objetos en tiempo real es vital para sistemas de vigilancia.
+Facilitar Diagnósticos Médicos: La segmentación precisa de imágenes médicas puede mejorar la identificación y tratamiento de enfermedades.
+Avances en la Automoción: La clasificación y detección precisa de objetos es crucial para la navegación segura de vehículos autónomos.
+Objetivos
+Objetivo General
+Desarrollar una solución que use modelos avanzados para mejorar la precisión y la velocidad en la detección de objetos, segmentación de imágenes y clasificación de imágenes.
+
+Objetivos Específicos
+Crear una aplicación que utilice modelos diferentes para cada tarea: detección, segmentación y clasificación de imágenes.
+Diseñar una arquitectura de tres capas para implementar los modelos de manera eficiente y escalable.
+Mejorar cada modelo para que funcione más rápido y con mayor precisión.
+Solución Propuesta
+Para resolver estos problemas, desarrollaremos una aplicación que incluye tres modelos de procesamiento de imágenes, cada uno especializado en una tarea:
+
+Detección de Objetos: Utilizaremos el modelo YOLOv5 para encontrar y ubicar objetos en imágenes. YOLOv5 es rápido y preciso, ideal para aplicaciones en tiempo real como vigilancia y robótica.
+
+Segmentación de Imágenes: Aplicaremos el modelo U-Net para dividir las imágenes en diferentes regiones. U-Net es muy útil en medicina para separar partes específicas de una imagen, como órganos en una tomografía.
+
+Clasificación de Imágenes: Implementaremos el modelo ResNet para clasificar imágenes en diferentes categorías. ResNet es conocido por su alta precisión y se utiliza en tareas como el reconocimiento facial y la identificación de productos.
+
+La arquitectura de la solución estará dividida en tres partes:
+
+Capa Cliente: Proporcionará una interfaz de usuario donde se puedan cargar imágenes y ver los outputs.
+
+Capa de Aplicación : Ejecutará los modelos de procesamiento de imágenes y gestionará el trabajo para que sea rápido y eficiente.
+
+Capa de Datos: Almacenará las imágenes y los resultados obtenidos de cada modelo, permitiendo un acceso rápido y eficiente a la información.
+
+Para facilitar la implementación y la escalabilidad, utilizaremos contenedores Docker, que nos permiten ejecutar y gestionar las diferentes partes del sistema de manera más sencilla.
+
+Tecnologías Utilizadas
+
+Lenguaje de Programación: Python (pruebas en google collab)
+Frameworks de Deep Learning: TensorFlow
+Modelo para Detección de Objetos: YOLOv5
+Modelo para Segmentación de Imágenes: U-Net
+Modelo para Clasificación de Imágenes: ResNet
+Contenedores: Docker
+Base de Datos: MongoDB
+
+Dataset
+
+Usaremos conjuntos de datos de Kaggle adecuados para cada tarea:
+
+Detección de Objetos: Dataset con imágenes etiquetadas con múltiples objetos.
+
+Segmentación de Imágenes: Dataset con imágenes segmentadas que identifican diferentes regiones, como el conjunto de datos de segmentación de órganos.
+
+Clasificación de Imágenes: Dataset con imágenes clasificadas en diferentes categorías.
+
+Metodología
+
+Preprocesamiento de Imágenes: Ajustaremos las imágenes para cada tarea específica, normalizando su tamaño y calidad para obtener mejores resultados.
+
+Entrenamiento de Modelos:
+
+YOLOv5: Entrenaremos el modelo con imágenes etiquetadas para detectar y ubicar objetos con precisión y rapidez.
+U-Net: Entrenaremos el modelo con imágenes segmentadas para separar regiones significativas en las imágenes.
+ResNet: Entrenaremos el modelo con imágenes etiquetadas para clasificar cada imagen en su categoría correspondiente.
+
+Evaluación y Optimización:
+
+Evaluaremos cada modelo con datos de prueba para medir su precisión y velocidad.
+Mejoraremos cada modelo ajustando sus parámetros para obtener los mejores resultados posibles.
+
+Despliegue:
+
+Los modelos entrenados se ejecutarán en el servidor usando contenedores Docker, gestionados por Kubernetes para asegurar que sean fáciles de escalar y mantener.
+Utilizaremos herramientas de procesamiento distribuido para manejar la carga de trabajo de manera eficiente, distribuyendo el procesamiento de imágenes entre múltiples servidores.
+
+Integración y Pruebas:
+
+Integraremos los modelos en una sola aplicación que permita a los usuarios cargar imágenes y obtener resultados de detección, segmentación y clasificación.
+Realizaremos pruebas para asegurar que la aplicación funcione correctamente en todas las tareas.
+
+Resultados Esperados:
+
+Esperamos que la aplicación pueda realizar la detección de objetos, segmentación de imágenes y clasificación de imágenes con alta precisión y de manera rápida. La arquitectura distribuida permitirá procesar grandes volúmenes de datos de manera eficiente, lo que es crucial para aplicaciones en seguridad, medicina y automoción.
+
+Conclusiones
+Desarrollar una aplicación que combine diferentes modelos avanzados para la detección, segmentación y clasificación de imágenes puede mejorar significativamente la precisión y eficiencia del procesamiento de imágenes. Utilizando contenedores y técnicas de procesamiento distribuido, podemos crear una solución escalable y de alto rendimiento adecuada para una variedad de aplicaciones críticas.
